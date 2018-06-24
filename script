@@ -1,0 +1,9 @@
+#Start 
+#Downloading data
+
+import requests
+r = requests.get('http://live.sts-timing.pl/cm2018/?hl=pl')
+c = r.content
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(c)
+main_content = soup.find('div', attrs = {'id': 'results'})
